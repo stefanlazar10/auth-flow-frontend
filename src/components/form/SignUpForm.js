@@ -2,8 +2,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthService } from "../../services/AuthService";
 import { useState } from "react";
 import clsx from "clsx";
+import { useTranslation } from "react-i18next";
 const SignUpForm = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [isLoading, setIsLoading] = useState(false);
   const handleSignUp = async (email, firstName, lastName, password) => {
     setIsLoading(true);
@@ -37,32 +39,32 @@ const SignUpForm = () => {
           name="email"
           className="border bg-grey-100 text-sm rounded-xl  mb-4 w-full p-2.5 focus:bg-white"
           type="text"
-          placeholder="Email"
+          placeholder={t("labels.email")}
         />
         <div className="flex gap-x-2 mb-4">
           <input
             name="firstName"
             className="border bg-grey-100 text-sm rounded-xl  w-1/2  p-2.5 focus:bg-white"
             type="text"
-            placeholder="First Name"
+            placeholder={t("labels.first-name")}
           />
           <input
             name="lastName"
             className="border bg-grey-100 text-sm rounded-xl   w-1/2 p-2.5 focus:bg-white"
             type="text"
-            placeholder="Last Name"
+            placeholder={t("labels.last-name")}
           />
         </div>
         <input
           name="password"
           className="border bg-grey-100 text-sm rounded-xl  mb-4 w-full p-2.5 focus:bg-white"
           type="text"
-          placeholder="Password"
+          placeholder={t("labels.password")}
         />
         <input
           className="border bg-grey-100 text-sm rounded-xl  mb-4 w-full p-2.5 focus:bg-white"
           type="text"
-          placeholder="Confirm Password"
+          placeholder={t("labels.confirm-password")}
         />
         <button
           disabled={isLoading}
@@ -91,20 +93,20 @@ const SignUpForm = () => {
               />
             </svg>
           ) : (
-            "Next"
+            t("labels.next")
           )}
         </button>
       </form>
 
       <div className="text-center pt-20 mt-auto">
-        Already have an account?{" "}
+        {t("sign-up.existing-account")}
         <button disabled={isLoading}>
           {!isLoading ? (
             <Link
               to="/login"
               style={{ color: "#22577A", textDecoration: "underline" }}
             >
-              Login
+              {t("labels.sign-in")}
             </Link>
           ) : (
             <span
@@ -118,7 +120,7 @@ const SignUpForm = () => {
               }}
             >
               {" "}
-              Login
+              {t("labels.sign-in")}
             </span>
           )}
         </button>

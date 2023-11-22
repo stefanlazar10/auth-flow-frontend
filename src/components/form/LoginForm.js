@@ -3,13 +3,14 @@ import { FacebookIcon, GoogleIcon, LinkedIcon } from "../../assets";
 import { AuthService } from "../../services/AuthService";
 import { useState } from "react";
 import clsx from "clsx";
+import { useTranslation } from "react-i18next";
 
 const LoginForm = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSignIn = async (username, password) => {
-    console.log("here");
     setIsLoading(true);
     try {
       const response = await AuthService.verifyCredentials(username, password);
@@ -38,13 +39,13 @@ const LoginForm = () => {
         <input
           className="border bg-grey-100 text-sm rounded-xl   w-full p-2.5 focus:bg-white"
           type="text"
-          placeholder="Username"
+          placeholder={t("labels.username")}
           name="username"
         />
         <input
           className="border bg-grey-100 text-sm rounded-xl   w-full p-2.5 focus:bg-white"
           type="password"
-          placeholder="Password"
+          placeholder={t("labels.password")}
           name="password"
         />
         <button disabled={isLoading}>
@@ -59,7 +60,7 @@ const LoginForm = () => {
               }}
               to="/forgot-password"
             >
-              Forgot password?
+              {t("login.forgot-password")}
             </Link>
           ) : (
             <span
@@ -72,7 +73,7 @@ const LoginForm = () => {
                 textDecoration: "none",
               }}
             >
-              Forgot password?
+              {t("login.forgot-password")}
             </span>
           )}
         </button>
@@ -101,14 +102,14 @@ const LoginForm = () => {
               />
             </svg>
           ) : (
-            "Sign in"
+            t("labels.sign-in")
           )}
         </button>
       </form>
 
       <div className="flex flex-row justify-center items-center mb-4">
         <div className="bg-grey-100 h-1 w-1/3"></div>
-        <div className="color-primary-grey mx-2">Or</div>
+        <div className="color-primary-grey mx-2">{t("labels.or")}</div>
         <div className="bg-grey-100 h-1 w-1/3"></div>
       </div>
 
@@ -118,11 +119,12 @@ const LoginForm = () => {
         <LinkedIcon />
       </div>
       <div className="text-center mt-auto pt-20">
-        Don't have account?{" "}
+        {t("login.create-account")}
         <button disabled={isLoading}>
           {!isLoading ? (
             <Link
               style={{
+                marginLeft: "4px",
                 width: "100%",
                 display: "flex",
                 justifyContent: "flex-end",
@@ -131,11 +133,12 @@ const LoginForm = () => {
               }}
               to="/sign-up"
             >
-              Sign up
+              {t("labels.sign-up")}
             </Link>
           ) : (
             <span
               style={{
+                marginLeft: "4px",
                 width: "100%",
                 display: "flex",
                 justifyContent: "flex-end",
@@ -144,7 +147,7 @@ const LoginForm = () => {
                 textDecoration: "underline",
               }}
             >
-              Sign up
+              {t("labels.sign-up")}
             </span>
           )}
         </button>

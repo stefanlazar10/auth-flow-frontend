@@ -1,0 +1,31 @@
+{  "login":{
+    "title":"Sign In",
+    "forgot-password":"Forgot Password?",
+    "create-account":"Don't you have an account?"
+},
+   "sign-up":{
+    "title":"Sign Up",
+    "existing-account":"Already have an account?"
+   },
+   "otp":{
+    "title":"OTP",
+    "email-sent":"We've sent you an email.Please check your mail and complete the OTP code",
+    "existing-account":"Already have an account?"
+   },
+   "select-favourites":{
+    "title":"Select your favourites"
+   },
+   "labels":{
+    "sign-in":"Sign In",
+    "or":"Or",
+    "username":"Username",
+    "password":"Password",
+    "first-name":"First Name",
+    "last-name":"Last Name",
+    "sign-up":"Sign Up",
+    "email":"Email",
+    "confirm-password":"Confirm Password",
+    "next":"Next",
+    "confirm":"Confirm"
+   }
+}

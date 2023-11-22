@@ -2,9 +2,11 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthService } from "../../services/AuthService";
 import clsx from "clsx";
+import { useTranslation } from "react-i18next";
 const OTPForm = () => {
   let navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
+  const { t } = useTranslation();
   const handleSubmitOTP = async (code) => {
     setIsLoading(true);
     try {
@@ -31,9 +33,7 @@ const OTPForm = () => {
 
   return (
     <>
-      <div className="text-center items-center mb-5">
-        We Send You Email Please Check Your Mail And Complete OTP Code
-      </div>
+      <div className="text-center items-center mb-5">{t("otp.email-sent")}</div>
 
       <form onSubmit={handleSubmit}>
         <div className="flex gap-x-2 mb-5 ">
@@ -122,20 +122,24 @@ const OTPForm = () => {
               />
             </svg>
           ) : (
-            "Confirm"
+            t("labels.confirm")
           )}
         </button>
       </form>
 
       <div className="text-center pt-20 mt-auto">
-        Already have an account?{" "}
+        {t("otp.existing-account")}
         <button disabled={isLoading}>
           {!isLoading ? (
             <Link
               to="/login"
-              style={{ color: "#22577A", textDecoration: "underline" }}
+              style={{
+                color: "#22577A",
+                textDecoration: "underline",
+                marginLeft: "4px",
+              }}
             >
-              Login
+              {t("labels.sign-in")}
             </Link>
           ) : (
             <span
@@ -146,10 +150,11 @@ const OTPForm = () => {
                 color: "grey",
                 pointerEvents: "none",
                 textDecoration: "underline",
+                marginLeft: "4px",
               }}
             >
               {" "}
-              Login
+              {t("labels.sign-in")}
             </span>
           )}
         </button>

@@ -2,8 +2,10 @@ import { useState, useEffect } from "react";
 import clsx from "clsx";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthService } from "../../services/AuthService";
+import { useTranslation } from "react-i18next";
 const SelectForm = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [isLoading, setIsLoading] = useState(false);
   const [isFetchLoading, setFetchLoading] = useState(false);
   const [categories, setCategories] = useState();
@@ -122,18 +124,18 @@ const SelectForm = () => {
             />
           </svg>
         ) : (
-          "Confirm"
+          t("labels.confirm")
         )}
       </button>
       <div className="text-center pt-20 mt-auto">
-        Already have an account?{" "}
+        {t("select-favourites.existing-account")}
         <button disabled={isLoading}>
           {!isLoading ? (
             <Link
               to="/login"
               style={{ color: "#22577A", textDecoration: "underline" }}
             >
-              Login
+              {t("labels.sign-in")}
             </Link>
           ) : (
             <span
@@ -147,7 +149,7 @@ const SelectForm = () => {
               }}
             >
               {" "}
-              Login
+              {t("labels.sign-in")}
             </span>
           )}
         </button>
