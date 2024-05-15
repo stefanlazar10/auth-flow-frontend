@@ -1,6 +1,5 @@
-import { unstable_renderSubtreeIntoContainer } from "react-dom";
-import SelectForm from "../../components/form/SelectFavouritesForm";
 import { useTranslation } from "react-i18next";
+import SelectForm from "../../components/form/SelectFavouritesForm";
 
 const SelectFavourites = () => {
   const { t } = useTranslation();

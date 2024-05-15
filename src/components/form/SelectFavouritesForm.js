@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
 import clsx from "clsx";
+import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthService } from "../../services/AuthService";
-import { useTranslation } from "react-i18next";
 const SelectForm = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
@@ -21,7 +21,7 @@ const SelectForm = () => {
         selectedCategories
       );
       if (response.status === 200) {
-        navigate("/");
+        navigate("/home");
       }
     } catch (error) {
       setIsLoading(false);

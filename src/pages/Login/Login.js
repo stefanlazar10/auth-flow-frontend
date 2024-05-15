@@ -1,6 +1,6 @@
 import { IconAvatar } from "../../assets";
-import LoginForm from "../../components/form/LoginForm";
 import { useTranslation } from "react-i18next";
+import LoginForm from "../../components/form/LoginForm";
 const Login = () => {
   const { t } = useTranslation();
 

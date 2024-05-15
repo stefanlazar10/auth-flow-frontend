@@ -13,18 +13,22 @@
     "existing-account":"Already have an account?"
    },
    "select-favourites":{
-    "title":"Select your favourites"
+    "title":"Select your favourites", 
+    "existing-account":"Already have an account?"
    },
    "labels":{
+    "reset-password":"Reset Password",   
     "sign-in":"Sign In",
     "or":"Or",
     "username":"Username",
     "password":"Password",
+    "new-password":"New Password",
     "first-name":"First Name",
     "last-name":"Last Name",
     "sign-up":"Sign Up",
     "email":"Email",
     "confirm-password":"Confirm Password",
+    "confirm-new-password":"Confirm New Password",
     "next":"Next",
     "confirm":"Confirm"
    }

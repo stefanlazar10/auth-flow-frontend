@@ -1,34 +1,42 @@
+import clsx from "clsx";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthService } from "../../services/AuthService";
-import clsx from "clsx";
-import { useTranslation } from "react-i18next";
 const OTPForm = () => {
   let navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const { t } = useTranslation();
-  const handleSubmitOTP = async (code) => {
+  const handleSubmitOTP = async (otpCode) => {
     setIsLoading(true);
     try {
-      const response = await AuthService.verifyOTPCode(code);
-      if (response.status === 200) {
-        navigate("/favourites");
-      }
+      const response = await AuthService.verifyOTPCode(otpCode);
+      
+        navigate("/home");
+        console.log(response)
+      
     } catch (error) {
+      console.log("Error",error.response);
+      if(error.response && error.response.status === 403) {
+        alert("Invalid OTP Code!")
+
+      }
       setIsLoading(false);
       console.log(error);
+    
     }
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    const code =
+    const otpCode =
       event.target["code-1"].value +
       event.target["code-2"].value +
       event.target["code-3"].value +
       event.target["code-4"].value +
       event.target["code-5"].value +
       event.target["code-6"].value;
-    handleSubmitOTP(code);
+      console.log(otpCode)
+    handleSubmitOTP(otpCode);
   };
 
   return (
@@ -127,7 +135,7 @@ const OTPForm = () => {
         </button>
       </form>
 
-      <div className="text-center pt-20 mt-auto">
+      <div className="text-center pt-12 mt-auto">
         {t("otp.existing-account")}
         <button disabled={isLoading}>
           {!isLoading ? (
