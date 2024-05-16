@@ -1,3 +1,5 @@
+Hello!This is my Authentication flow app in ReactJs.The app is designed for mobile devices.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
