@@ -11,19 +11,16 @@ const OTPForm = () => {
     setIsLoading(true);
     try {
       const response = await AuthService.verifyOTPCode(otpCode);
-      
-        navigate("/home");
-        console.log(response)
-      
-    } catch (error) {
-      console.log("Error",error.response);
-      if(error.response && error.response.status === 403) {
-        alert("Invalid OTP Code!")
 
+      navigate("/selectFavourites");
+      console.log(response);
+    } catch (error) {
+      console.log("Error", error.response);
+      if (error.response && error.response.status === 403) {
+        alert("Invalid OTP Code!");
       }
       setIsLoading(false);
       console.log(error);
-    
     }
   };
   const handleSubmit = (event) => {
@@ -35,7 +32,7 @@ const OTPForm = () => {
       event.target["code-4"].value +
       event.target["code-5"].value +
       event.target["code-6"].value;
-      console.log(otpCode)
+    console.log(otpCode);
     handleSubmitOTP(otpCode);
   };
 
