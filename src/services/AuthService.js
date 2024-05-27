@@ -56,9 +56,12 @@ export class AuthService {
   }
 
   static recoverPass(email) {
-    return axios.post(process.env.REACT_APP_BASE_API_URL + "/auth/recover", {
-      email: email,
-    });
+    return axios.post(
+      process.env.REACT_APP_BASE_API_URL + "/auth/recover-password",
+      {
+        email: email,
+      }
+    );
   }
 
   static registerUser({ email, firstname, lastname, password }) {
@@ -66,6 +69,12 @@ export class AuthService {
       email: email,
       firstname: firstname,
       lastname: lastname,
+      password: password,
+    });
+  }
+
+  static changePassword({ password }) {
+    return axios.post(process.env.REACT_APP_BASE_API_URL + "/change-password", {
       password: password,
     });
   }

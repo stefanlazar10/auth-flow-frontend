@@ -19,6 +19,7 @@
    "labels":{
     "reset-password":"Reset Password",   
     "sign-in":"Sign In",
+    "submit":"Submit",
     "or":"Or",
     "username":"Username",
     "password":"Password",

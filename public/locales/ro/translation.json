@@ -29,6 +29,7 @@
     "new-password": "Parola Noua",
     "confirm-password": "Confirmă parola",
     "next": "Următorul",
-    "confirm": "Confirmă"
+    "confirm": "Confirmă",
+    "submit":"Trimite"
   }
 }

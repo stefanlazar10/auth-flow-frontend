@@ -32,7 +32,6 @@ const OTPForm = () => {
       event.target["code-4"].value +
       event.target["code-5"].value +
       event.target["code-6"].value;
-    console.log(otpCode);
     handleSubmitOTP(otpCode);
   };
 

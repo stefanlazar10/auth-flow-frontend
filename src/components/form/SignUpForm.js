@@ -32,7 +32,7 @@ const SignUpForm = () => {
       .required("Required Password")
       .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#\$%\^&\*])(?=.{8,})/),
     confirmPassword: Yup.string()
-      .required("Confirm Password is required")
+      .required("Please retype your password")
       .oneOf([Yup.ref("password")], "Passwords must match"),
   });
   const handleSignUp = async (email, firstname, lastName, password) => {

@@ -12,13 +12,13 @@ const ChangePasswordForm = () => {
   const { t } = useTranslation();
   const ChangeSchema = Yup.object().shape({
     currentPassword: Yup.string().required("Required Password"),
-    newPassword: Yup.string()
+    password: Yup.string()
       .min(8, "Too short!")
       .required("Required Password")
       .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#\$%\^&\*])(?=.{8,})/),
-    confirmPassword: Yup.string(),
-    //required("Confirm Password is required"),
-    // .oneOf([Yup.ref("newPassword")], "Passwords must match"),
+    confirmNewPassword: Yup.string()
+      .required("Please retype your password")
+      .oneOf([Yup.ref("password"), null], "Passwords must match"),
   });
 
   const handleRecover = async (newPassword) => {
@@ -43,7 +43,7 @@ const ChangePasswordForm = () => {
       <Formik
         initialValues={{
           currentPassword: "",
-          newPassword: "",
+          password: "",
           confirmNewPassword: "",
         }}
         validationSchema={ChangeSchema}
@@ -69,13 +69,13 @@ const ChangePasswordForm = () => {
             <Field
               className={clsx(
                 "border bg-grey-100 text-sm rounded-xl  w-full p-2.5 focus:bg-white",
-                errors.newPassword && touched.newPassword
+                errors.password && touched.password
                   ? "border-red-500"
                   : "border-gray-100"
               )}
               type="password"
               placeholder={t("labels.new-password")}
-              name="newPassword"
+              name="password"
               id="Password"
             />
             {errors.newPassword && touched.newPassword ? (
