@@ -25,7 +25,7 @@ const ForgotPassForm = () => {
       });
       notify();
       setTimeout(() => {
-        navigate("/change-password");
+        navigate("/home");
       }, 2000);
     } catch (error) {
       console.log(error);

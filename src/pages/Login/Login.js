@@ -1,3 +1,4 @@
+import Navbar from "../Navbar/Navbar";
 import { IconAvatar } from "../../assets";
 import { useTranslation } from "react-i18next";
 import LoginForm from "../../components/form/LoginForm";
@@ -8,6 +9,9 @@ const Login = () => {
     <>
       <div className=" relative h-full">
         <img className="absolute z-0 w-full" src="Rectangle 4.png" />
+        <div className="z-10 sticky top-0">
+          <Navbar />
+        </div>
         <div className="px-12 pt-36 pb-24 h-full">
           {/* <div className="z-10 absolute">
             {Object.keys(lngs).map((lng) => (

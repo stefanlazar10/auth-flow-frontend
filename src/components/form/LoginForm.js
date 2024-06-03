@@ -180,7 +180,9 @@ const LoginForm = () => {
       <div className="flex justify-center">
         <GoogleIcon />
         <FacebookIcon />
-        <LinkedIcon />
+        <a href="https://www.linkedin.com/in/%C8%99tefan-adrian-laz%C4%83r-446426194/">
+          <LinkedIcon />
+        </a>
       </div>
       <div className="text-center mt-auto pt-16">
         {t("login.create-account")}
