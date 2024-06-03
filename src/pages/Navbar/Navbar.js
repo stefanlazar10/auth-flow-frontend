@@ -178,14 +178,13 @@ const MenuButton = styled(BaseMenuButton)(
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 600;
     font-size: 0.875rem;
-    line-height: 1.5;
+    line-height: 0.5;
     padding: 8px 16px;
     border-radius: 8px;
     color: #22577A;
     transition: all 150ms ease;
     cursor: pointer;
-    background: ${theme.palette.mode === "dark" ? grey[900] : "#fff"};
-    border: 1px solid ${theme.palette.mode === "dark" ? grey[700] : grey[200]};
+    border: 1px solid ${theme.palette.mode === "dark" ? "black" : "black"};
     color: ${theme.palette.mode === "dark" ? grey[200] : grey[900]};
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   
