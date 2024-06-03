@@ -185,12 +185,13 @@ const MenuButton = styled(BaseMenuButton)(
     transition: all 150ms ease;
     cursor: pointer;
     border: 1px solid ${theme.palette.mode === "dark" ? "black" : "black"};
-    color: ${theme.palette.mode === "dark" ? grey[200] : grey[900]};
+    color: white;
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   
     &:hover {
       background: ${theme.palette.mode === "dark" ? grey[800] : grey[50]};
       border-color: ${theme.palette.mode === "dark" ? grey[600] : grey[300]};
+      color:black;
     }
   
     &:active {
