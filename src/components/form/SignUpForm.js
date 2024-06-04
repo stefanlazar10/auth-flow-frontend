@@ -17,9 +17,9 @@ const SignUpForm = () => {
       .required("Required")
       .test("emailExists", "Email already exists", async (value) => {
         if (!isEmailError) {
-          return true; // No error if email doesn't already exist
+          return true;
         }
-        return false; // Error if email already exists
+        return false;
       }),
     firstname: Yup.string()
       .required("Required")
