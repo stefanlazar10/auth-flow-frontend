@@ -1,34 +1,35 @@
 {
-    "login": {
-      "title": "Autentificare",
-      "forgot-password": "Ai uitat parola?",
-      "create-account": "Nu ai cont?"
-    },
-    "sign-up": {
-      "title": "Înregistrare",
-      "existing-account": "Ai deja un cont?"
-    },
-    "otp": {
-      "title": "OTP",
-      "email-sent": "Ți-am trimis un email. Te rugăm să verifici emailul și să completezi codul OTP.",
-      "existing-account": "Ai deja un cont?"
-    },
-    "select-favourites": {
-      "title": "Selectează-ți favoritele",
-      "existing-account": "Ai deja un cont?"
-    },
-    "labels": {
-      "sign-in": "Autentificare",
-      "or": "Sau",
-      "username": "Nume de utilizator",
-      "password": "Parolă",
-      "first-name": "Prenume",
-      "last-name": "Nume",
-      "sign-up": "Înregistrare",
-      "email": "Email",
-      "confirm-password": "Confirmă parola",
-      "next": "Următorul",
-      "confirm": "Confirmă"
-    }
+  "login": {
+    "title": "Autentificare",
+    "forgot-password": "Ai uitat parola?",
+    "create-account": "Nu ai cont?"
+  },
+  "sign-up": {
+    "title": "Înregistrare",
+    "existing-account": "Ai deja un cont?"
+  },
+  "otp": {
+    "title": "OTP",
+    "email-sent": "Ți-am trimis un email. Te rugăm să verifici emailul și să completezi codul OTP.",
+    "existing-account": "Ai deja un cont?"
+  },
+  "select-favourites": {
+    "title": "Selectează-ți favoritele",
+    "existing-account": "Ai deja un cont?"
+  },
+  "labels": {
+    "sign-in": "Autentificare",
+    "or": "Sau",
+    "username": "Nume de utilizator",
+    "password": "Parolă",
+    "first-name": "Prenume",
+    "last-name": "Nume",
+    "sign-up": "Înregistrare",
+    "email": "Email",
+    "new-password": "Parola Noua",
+    "confirm-password": "Confirmă parola",
+    "next": "Următorul",
+    "confirm": "Confirmă",
+    "submit":"Trimite"
   }
-  
+}

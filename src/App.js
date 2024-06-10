@@ -6,9 +6,10 @@ import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import SignUp from "./pages/Signup/Signup";
 import { useTranslation } from "react-i18next";
-import { Route, Routes} from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import NotFound from "./pages/NotFound/NotFound";
 import ForgotPass from "./pages/ForgotPass/ForgotPass";
+import ChangePassword from "./pages/ChangePassword/ChangePassword";
 import SelectFavourites from "./pages/SelectFavourites/SelectFavourites";
 
 const App = () => {
@@ -37,6 +38,7 @@ const App = () => {
         <Route path="*" element={<NotFound />} />
         <Route path="/" element={<Login />} />
         <Route path="/forgot-password" element={<ForgotPass />} />
+        <Route path="/change-password" element={<ChangePassword />} />
       </Routes>
     </div>
   );

@@ -17,9 +17,9 @@ const SignUpForm = () => {
       .required("Required")
       .test("emailExists", "Email already exists", async (value) => {
         if (!isEmailError) {
-          return true; // No error if email doesn't already exist
+          return true;
         }
-        return false; // Error if email already exists
+        return false;
       }),
     firstname: Yup.string()
       .required("Required")
@@ -32,7 +32,7 @@ const SignUpForm = () => {
       .required("Required Password")
       .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#\$%\^&\*])(?=.{8,})/),
     confirmPassword: Yup.string()
-      .required("Confirm Password is required")
+      .required("Please retype your password")
       .oneOf([Yup.ref("password")], "Passwords must match"),
   });
   const handleSignUp = async (email, firstname, lastName, password) => {

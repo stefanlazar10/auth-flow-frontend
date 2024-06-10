@@ -3,40 +3,32 @@ import axios from "axios";
 export class AuthService {
   static verifyCredentials({ email, password }) {
     return new Promise((resolve) =>
-    setTimeout(()=> {
-    return axios.post(process.env.REACT_APP_BASE_API_URL + "/auth/login", {
-      email: email,
-      password: password,
-    }).then(resolve);
-  },2000)
-    )}
-
-  static createCredentials(email, firstname, lastname, password) {
-    //  axios.post(URL,{username:username,password:password})
-    return new Promise((resolve) => {
       setTimeout(() => {
-        resolve({
-          status: 200,
-          data: "text",
-        });
-      }, 10000); // Resolves after 1 second (1000 milliseconds)
-    });
+        return axios
+          .post(process.env.REACT_APP_BASE_API_URL + "/auth/login", {
+            email: email,
+            password: password,
+          })
+          .then(resolve);
+      }, 2000)
+    );
   }
 
   static verifyOTPCode(otpCode) {
-    return axios.post(process.env.REACT_APP_BASE_API_URL+"/auth/validate-otp",{otpCode:otpCode})
-    
+    return axios.post(
+      process.env.REACT_APP_BASE_API_URL + "/auth/validate-otp",
+      { otpCode: otpCode }
+    );
   }
 
   static postFavouriteCategories(categories) {
-    //  axios.post(URL,{username:username,password:password})
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve({
           status: 200,
           data: categories,
         });
-      }, 10000); // Resolves after 1 second (1000 milliseconds)
+      }, 1000);
     });
   }
 
@@ -64,9 +56,12 @@ export class AuthService {
   }
 
   static recoverPass(email) {
-    return axios.post(process.env.REACT_APP_BASE_API_URL + "/auth/recover", {
-      email: email,
-    });
+    return axios.post(
+      process.env.REACT_APP_BASE_API_URL + "/auth/recover-password",
+      {
+        email: email,
+      }
+    );
   }
 
   static registerUser({ email, firstname, lastname, password }) {
@@ -78,9 +73,9 @@ export class AuthService {
     });
   }
 
-  // static sendOTP(email) {
-  //   return axios.post(process.env.REACT_APP_BASE_API_URL + "/otp", {
-  //     email: email,
-  //   });
-  // }
+  static changePassword({ password }) {
+    return axios.post(process.env.REACT_APP_BASE_API_URL + "/change-password", {
+      password: password,
+    });
+  }
 }

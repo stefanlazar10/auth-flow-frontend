@@ -21,17 +21,18 @@ const LoginForm = () => {
       .required("Required Password")
       .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#\$%\^&\*])(?=.{8,})/),
   });
-  const notify = () => toast("OTP code has been sent!")
+  const notify = () => toast("OTP code has been sent!");
   const handleSignIn = async (email, password, setFieldError) => {
     setIsLoading(true);
     try {
-      const response = await AuthService.verifyCredentials({
+      await AuthService.verifyCredentials({
         email: email,
         password: password,
       });
-     notify()
-     setTimeout(()=> { navigate("/otp");},2000) 
-
+      notify();
+      setTimeout(() => {
+        navigate("/otp");
+      }, 2000);
     } catch (error) {
       console.log("Error");
       if (error.response && error.response.status === 400) {
@@ -45,21 +46,19 @@ const LoginForm = () => {
 
   const handleSubmit = async (values, { setFieldError, setSubmitting }) => {
     const { email, password } = values;
-    
-    // Validate the form
+
     try {
       await SignInSchema.validate(values, { abortEarly: false });
     } catch (validationErrors) {
-      validationErrors.inner.forEach(error => {
+      validationErrors.inner.forEach((error) => {
         setFieldError(error.path, error.message);
       });
-      setSubmitting(false); // Set submitting to false to allow resubmission
+      setSubmitting(false);
       return;
     }
-  
-    // If form is valid, proceed with form submission
+
     handleSignIn(email, password, setFieldError);
-  };  
+  };
 
   return (
     <>
@@ -69,7 +68,7 @@ const LoginForm = () => {
         onSubmit={handleSubmit}
       >
         {({ errors, touched }) => (
-          <Form className="relative flex flex-col w-full space-y-4 mb-8">
+          <Form className="relative flex flex-col w-full space-y-4 mb-8 ">
             <Field
               className={clsx(
                 "border bg-grey-100 text-sm rounded-xl  w-full p-2.5 focus:bg-white",
@@ -135,7 +134,6 @@ const LoginForm = () => {
                 isLoading ? "bg-grey-300" : "bg-regal-green"
               )}
             >
-          
               {isLoading ? (
                 <svg
                   aria-hidden="true"
@@ -153,11 +151,10 @@ const LoginForm = () => {
                     fill="currentFill"
                   />
                 </svg>
-                
               ) : (
                 t("labels.sign-in")
               )}
-                <ToastContainer
+              <ToastContainer
                 position="top-center"
                 autoClose={5000}
                 hideProgressBar={false}
@@ -168,9 +165,8 @@ const LoginForm = () => {
                 draggable
                 pauseOnHover
                 theme="light"
-              /> 
+              />
             </button>
-           
           </Form>
         )}
       </Formik>
@@ -184,7 +180,9 @@ const LoginForm = () => {
       <div className="flex justify-center">
         <GoogleIcon />
         <FacebookIcon />
-        <LinkedIcon />
+        <a href="https://www.linkedin.com/in/%C8%99tefan-adrian-laz%C4%83r-446426194/">
+          <LinkedIcon />
+        </a>
       </div>
       <div className="text-center mt-auto pt-16">
         {t("login.create-account")}
@@ -219,7 +217,6 @@ const LoginForm = () => {
             </span>
           )}
         </button>
-      
       </div>
     </>
   );
