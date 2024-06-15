@@ -7,12 +7,13 @@ const Login = () => {
 
   return (
     <>
-      <div className=" relative h-full">
+      <div className="relative w-full h-full">
         <img className="absolute z-0 w-full" src="Rectangle 4.png" />
         <div className="z-10 sticky top-0">
           <Navbar />
         </div>
-        <div className="px-12 pt-36 pb-24 h-full">
+        <div className="px-12 sm:pt-20 lg:pt-32 md:pt-60 pb-24 h-full">
+          {/*<div className="px-12 lg:mt-24 pt-32 pb-24 h-full" vezi margin top pe rezolutie
           {/* <div className="z-10 absolute">
             {Object.keys(lngs).map((lng) => (
               <button

@@ -7,7 +7,7 @@ const SignUp = () => {
     <>
       <div className=" relative h-full">
         <img className="absolute z-0 w-full" src="Rectangle 4.png" />
-        <div className="relative z-10">
+        <div className="relative sticky z-10">
           <Navbar />
         </div>
 

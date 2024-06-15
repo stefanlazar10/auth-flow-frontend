@@ -71,7 +71,7 @@ const LoginForm = () => {
           <Form className="relative flex flex-col w-full space-y-4 mb-8 ">
             <Field
               className={clsx(
-                "border bg-grey-100 text-sm rounded-xl  w-full p-2.5 focus:bg-white",
+                "border bg-grey-100 text-sm rounded-xl w-full p-2.5 focus:bg-white",
                 errors.email && touched.email
                   ? "border-red-500"
                   : "border-gray-100"
@@ -184,7 +184,7 @@ const LoginForm = () => {
           <LinkedIcon />
         </a>
       </div>
-      <div className="text-center mt-auto pt-16">
+      <div className="text-center mt-auto smm:pt-16 sm:pt-16 mdd:pt-8 md:pt-20 lg:pt-4">
         {t("login.create-account")}
         <button disabled={isLoading}>
           {!isLoading ? (
