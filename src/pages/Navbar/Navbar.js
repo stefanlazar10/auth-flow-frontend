@@ -17,23 +17,25 @@ function Navbar() {
   };
 
   return (
-    <div className="grid grid-cols-3 gap-4 w-full sticky top-0">
-      <div className="flex justify-center mr-8">
+    <div className="flex justify-between items-center sticky top-0">
+      <ul className="grid grid-cols-3 sm:gap-3  md:grid-cols-1 tablet:grid-cols-1">
+      <li className="flex justify-center p-4">
         {" "}
+      
         <Link to="/home">
           <Dropdown>
             <MenuButton>Home</MenuButton>
           </Dropdown>
         </Link>
-      </div>
-      <div className="flex justify-center mr-6">
+      </li>
+      <li className="flex justify-center p-4">
         <Link to="/login">
           <Dropdown>
             <MenuButton>Sign in</MenuButton>
           </Dropdown>
         </Link>
-      </div>
-      <div className="flex justify-center mr-4">
+      </li>
+      <li className="flex justify-center p-4">
         {" "}
         <Dropdown>
           <MenuButton>Account</MenuButton>
@@ -47,7 +49,8 @@ function Navbar() {
             </MenuItem>
           </Menu>
         </Dropdown>
-      </div>
+      </li>
+      </ul>
     </div>
   );
 }
@@ -85,11 +88,10 @@ const Listbox = styled("ul")(
     padding: 6px;
     margin: 12px 0;
     min-width: 200px;
-    border-radius: 12px;
     overflow: auto;
     outline: 0px;
     background: ${theme.palette.mode === "dark" ? grey[900] : "#fff"};
-    border: 1px solid ${theme.palette.mode === "dark" ? grey[700] : grey[200]};
+    // border: 1px solid ${theme.palette.mode === "dark" ? grey[700] : grey[200]};
     color: ${theme.palette.mode === "dark" ? grey[300] : grey[900]};
     box-shadow: 0px 4px 30px ${
       theme.palette.mode === "dark" ? grey[900] : grey[200]
@@ -184,7 +186,7 @@ const MenuButton = styled(BaseMenuButton)(
     color: #22577A;
     transition: all 150ms ease;
     cursor: pointer;
-    border: 1px solid ${theme.palette.mode === "dark" ? "black" : "black"};
+    // border: 1px solid ${theme.palette.mode === "dark" ? "black" : "black"};
     color: white;
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   

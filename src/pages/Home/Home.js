@@ -1,11 +1,10 @@
-import { ProfilePicture } from "../../assets";
 import Navbar from "../Navbar/Navbar";
 function Home() {
   return (
     <>
       <div className="relative h-full">
-        <img className="absolute z-0 w-full" src="Rectangle 4.png" />
-        <div className="relative z-10">
+        <img className="absolute z-0 w-full"  src="Rectangle 4.png" />
+        <div className="relative sticky z-10">
           <Navbar />
         </div>
 
@@ -14,7 +13,7 @@ function Home() {
             Home
           </div>
           <div className="flex mt-4 mb-4 justify-center w-full">
-            <ProfilePicture />
+            <img className="w-28 h-28" src="profilepicture.png" />
           </div>
           <div className="mt-4">
             <p className="text-l font-mono">
