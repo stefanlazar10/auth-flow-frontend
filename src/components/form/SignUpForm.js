@@ -183,7 +183,7 @@ const SignUpForm = () => {
         )}
       </Formik>
 
-      <div className="text-center pt-12 mt-auto">
+      <div className="text-center pt-12 mt-auto smm:pt-28 sm:pt-32 mdd:pt-32 md:pt-32 lg:pt-4">
         {t("sign-up.existing-account")}
         <button disabled={isLoading}>
           {!isLoading ? (

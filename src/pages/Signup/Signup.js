@@ -11,7 +11,7 @@ const SignUp = () => {
           <Navbar />
         </div>
 
-        <div className="relative z-10 px-12 pt-72 pb-24 h-full">
+        <div className="relative z-10 px-12 pt-72 pb-24 sm:pt-60 tablet:pt-72 lg:pt-56 md:pt-72 h-full">
           <div className="text-3xl color-black text-center font-bold mb-8">
             {t("sign-up.title")}
           </div>

@@ -18,7 +18,7 @@ function Navbar() {
 
   return (
     <div className="flex justify-between items-center sticky top-0">
-      <ul className="flex smm:ml-2 ml-8 gap-2 justify-center">
+      <ul className="grid grid-cols-3 sm:gap-3  md:grid-cols-1 tablet:grid-cols-1">
       <li className="flex justify-center p-4">
         {" "}
       

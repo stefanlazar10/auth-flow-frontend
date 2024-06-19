@@ -3,10 +3,9 @@ module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
     screens: {
-      "2xl": { max: "1535px" },
+      "2xl": { max: "1800px" },
       xl: { max: "1279px" },
       lg: { min: "1023px" },
-      mdd:{min:"820px"},
       md: {min: "767px" },
       sm: { max: "639px" },
       smm:{max:"380px"},
