@@ -1,4 +1,4 @@
-Hello!This is my Authentication flow app in ReactJs.The app is designed for mobile devices.
+Hello!This is my Authentication flow app in ReactJs.The app is designed for mobile devices and tablets so the resolutions can vary between 300px-1024px for responsiveness.
 
 # Getting Started with Create React App
 
